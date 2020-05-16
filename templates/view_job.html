@@ -1,0 +1,47 @@
+{% extends 'header.html' %}
+
+{% block content %}
+
+
+<div class="container bg-light">
+			<div class="row">
+				<div class="col-sm-12 pt-5 pb-2">
+				<h1>View job</h1>
+				</div>
+
+				<div class="col-sm-12">
+					<br/>
+					<h3>Job Title : <a href="view_job"> {{ toys.job_tittle }}</a></h3>
+                    Require language: {{ toys.requirement }}<br/>
+                    salary : {{ toys.salary }}<br/>
+                    Job Location : {{ toys.location }}<br/>
+                    Total experience : {{ toys.experience }}<br/>
+                    {% if request.session.email is not NULL %}
+                        {% if toy2 == False %}
+                           Applied
+                        {% else %}
+                          <a href="/apply_job/{{ toys.id }}">Apply</a>
+                        {% endif %}
+                    {% else %}
+                    <a href="/login">Apply</a>
+                    {% endif %}
+				</div>
+
+
+
+			</div>
+			</div>
+		</div>
+
+
+  <div class="container-fluid mt-5 text-center" style="border-top: 2px solid red">
+  	<h6 class="text-left pt-5" style="font-size:12px">Browse-Jobs-Browse-Companies-Salaries-Work at About</h6>
+  	<h6 class="text-left pt-3" style="font-size:12px">© 2020 Privacy Center-Cookies, Privacy and Terms</h6>
+  	<h3 style="font-size:18px">Let Employers Find You</h3>
+	  <button class=" btn btn-primary mb-3"><a href="resume" class="text-white">Upload Your Resume</a></button>
+  </div>
+  <button></button>
+</body>
+</html>
+
+ {% endblock %}

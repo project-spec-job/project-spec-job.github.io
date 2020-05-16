@@ -1,0 +1,44 @@
+{% extends 'header.html' %}
+
+{% block content %}
+<body class="bg-light">
+	<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<center><img src="{{baseurl}}images/job1.png" height="100px" width="100px"></center>
+				</div>
+			</div>
+		</div>
+	<div class="container">
+	<div class="row">
+	<div class="col-sm-6 p-5 bg-white mx-auto text-center" >
+		<center><h2 style="font-size: 30px;">Set a Profile</h2>
+
+		<div class="  pb-3 text-center">
+
+<form action="registration2" method="POST">
+	{% csrf_token %}
+<p class="text-left m-1">Name</p><input class="form-control" type="text" style="padding: 10px" name="name" placeholder="enter your Name"/>
+	<p class="text-left m-1">Dob</p><input class="form-control" style="padding: 10px;"  name="dob" type="date"placeholder="enter your dob"/></br>
+   	<p class="text-left m-1">Gender</p><input class="form-control" style="padding: 10px;"  name="gender" type="text"placeholder="enter your gender"/></br>
+    <p class="text-left m-1">Area</p><input class="form-control" style="padding: 10px;"  name="area" type="text"placeholder="enter your area"/></br>
+    <p class="text-left m-1">Martial Status</p><input class="form-control" style="padding: 10px;"  name="ms" type="text"placeholder="enter your martial-status"/></br>
+    <p class="text-left m-1">Qualification</p><input class="form-control" style="padding: 10px;"  name="qui" type="text"placeholder="enter your qualification"/></br>
+	<p class="text-left m-1">Experience</p><input class="form-control" style="padding: 10px;"  name="exp" type="text"placeholder="enter your experience"/></br>
+    <p class="text-left m-1">Current Salary</p><input class="form-control" style="padding: 10px;"  name="cs" type="text"placeholder="enter your current salary"/></br>
+	<p class="text-left m-1">Expected Salary</p><input class="form-control" style="padding: 10px;"  name="es" type="text"placeholder="enter your expected-salary"/></br>
+	<p class="text-left m-1">present_company</p><input class="form-control" type="company" style="..." name="company" placeholder="enter your present-company"/>
+    <p class="text-left m-1">job location</p><input class="form-control" style="padding: 10px;"  name="location" type="text"placeholder="enter your job-location"/></br>
+	<p class="text-left m-1">phone</p><input class="form-control" type="text" style="padding: 10px" name="phone" placeholder="enter your phone"/>
+	<input type="submit" value="submit" class="btn btn-primary btn-block" style="border-radius: 30px;">
+	</form>
+		<p class="mt-5 text-center">By signing in to your account, you agree to Indeed's Terms of Service and consent to our Cookie Policy and Privacy Policy.
+This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+
+		</div>
+
+
+	</div>
+</div>
+</center>
+{% endblock %}

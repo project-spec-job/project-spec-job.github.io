@@ -1,0 +1,40 @@
+{% extends 'header.html' %}
+
+{% block content %}
+	<div class="container">
+			<div class="row">
+				<div class="col-sm-12 p-2 bg-white mx-auto text-center">
+					<center><h1 style="font-size: 30px;">POST A JOB</h1></center>
+				</div>
+			</div>
+		</div>
+<div class="container">
+	<div class="row">
+	<div class="col-sm-6 p-2 bg-white mx-auto text-left m-1" >
+			<form action="post_a_job" method="POST">
+				{% csrf_token %}
+						<p class="text-left m-1">Company name for this job*</p><input class="form-control" type="cj"  name="company" style="padding: 10px" placeholder="enter your company name for this job "/><br/>
+		<p class="text-left m-1">job tittle*</p><input class="form-control" style="padding: 10px;" type="jt" name="job" placeholder="enter your job tittle"/></br>
+                <p class="text-left m-1">location*</p><input class="form-control" style="padding: 10px;" type="loca" name="location" placeholder="enter your job location"/></br>
+				  <p class="text-left m-1">Experience</p><input class="form-control" style="padding: 10px;" type="loca" name="experience" placeholder="Experince"/></br>
+
+				  <p class="text-left m-1">Salary</p><input class="form-control" style="padding: 10px;" type="loca" name="salary" placeholder="enter salary"/></br>
+
+				  <p class="text-left m-1">Requirement</p><input class="form-control" style="padding: 10px;" type="loca" name="requirement" placeholder="enter Requirement"/></br>
+		
+			<input type="submit" value="Submit" class="btn btn-primary btn-block" style="border-radius: 30px;">
+
+            </form>
+		<div class="container">
+            <div class="row">
+                <div class="col-sm-6 p-5 bg-white mx-auto text-right m-1">
+					<button class="btn btn-block  text-right m-1" style="border-radius: 30px; color:blue"><a href="/view_all_jobs">View all post</a> </button>
+
+            </div>
+                </div>
+	</div>
+</div>
+</center>
+</div>
+</div>
+{% endblock %}

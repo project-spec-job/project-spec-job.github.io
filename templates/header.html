@@ -1,0 +1,85 @@
+{% load static %}
+{% static "/" as baseurl %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+</head>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+</style>
+<body>
+<nav class="navbar navbar-expand-lg" style="border-bottom:2px solid red;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand text-primary " href="#"><img src="{{baseurl}}images/job1.png" style="width: 120px; height: 80px;"></a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link text-dark" href="/">Find Jobs<span class="sr-only">(current)</span></a>
+      </li>
+   <!--   <li class="nav-item">
+        <a class="nav-link text-dark" href="/reviews">Company reviews</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/find_salary" >Find salaries</a>
+      </li> -->
+  </ul>
+  <ul class="navbar-nav ml-auto">
+       <li class="nav-item active">
+        <a class="nav-link text-dark" href="/resume">Post your resume<span class="sr-only">(current)</span></a>
+      </li>
+      {% if request.session.email is not NULL  %}
+      <li class="nav-item">
+        <a class="nav-link text-primary" href="/"><b>Hi {{ request.session.name }}!</b></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="#"><b>|</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/logout">logout</a>
+      </li>
+      {% elif request.session.c_email is not NULL  %}
+      <li class="nav-item">
+        <a class="nav-link text-primary" href="/post_a_job"><b>Hi {{ request.session.c_name }}!</b></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="#"><b>|</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/logout">logout</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link text-primary" href="/login"><b>Sign in</b></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="#"><b>|</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="/employee">Employers / Post Job</a>
+      </li>
+       {% endif %}
+    </ul>
+
+  </div>
+</nav>
+</body>
+</html>
+{%  block content %}
+
+{%  endblock %}

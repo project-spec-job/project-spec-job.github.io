@@ -1,0 +1,56 @@
+
+{% load static %}
+{% static "/" as baseurl %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+<body class="bg-light">
+	<div class="container">
+			<div class="row">
+				<div class="col-sm-12 ">
+					<center><img src="{{baseurl}}images/job1.png" height="100px" width="100px"></center>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+	<div class="row">
+	<div class="col-sm-6 p-5 bg-white mx-auto text-center" >
+		<center><h3 style="font-size: 30px;">Sign In</h3>
+			<form action="login" method="POST">
+	{% csrf_token %}
+		<p class="text-left m-1">Email</p><input class="form-control" type="Email"  name="email" style="padding: 10px" placeholder="enter your Email"/>
+		<p class="text-left m-1">Password</p><input class="form-control" style="padding: 10px;" type="password" name="pass" placeholder="enter your password"/></br>
+		<p class="text-left pb-3"><input class="mr-3" type="checkbox" placeholder="enter your Email"/>Keep me signed in on this device.</p>		
+		<input type="submit" value="Login" class="btn btn-primary btn-block" style="border-radius: 30px;">
+			</form>
+
+		<div class="  pb-3 text-center">
+			<div class="container-fluid mt-3 text-center" style="border-top:1px solid red">
+		
+		</div>
+	</div>
+</div>
+</center>
+</div>
+</div>
+		<center><p style="font-size: 12px;padding-top: 20px"><a href="registration">Not in member?Create an account free</a>
+
+		 <p class="text-info">Forgot Your Password?</p>
+
+  </div>
+		 <div>
+		 	
+		 </div>
+
+</body>
+			
+		</div>
+</body>
+</html>

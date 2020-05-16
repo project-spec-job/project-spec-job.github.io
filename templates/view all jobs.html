@@ -1,0 +1,55 @@
+{% extends 'header.html' %}
+
+{% block content %}
+
+		<div class="container bg-light">
+			<div class="row">
+				<div class="col-sm-12 pt-5 pb-2">
+				<h1>All Post job</h1>
+				</div>
+                {% for toy in toys %}
+				<div class="col-sm-6">
+					<br/>
+					<h3>Job Title : {{ toy.job_tittle }}</a></h3><br/>
+                    Require language: {{ toy.requirement }}<br/>
+                    salary : {{ toy.salary }}<br/>
+                    Job Location : {{ toy.location }}<br/>
+                    Total experience : {{ toy.experience }}<br/>
+                    Total applicant:
+                    {% if  toy.applicants  > 0 %}
+                    <a href="/view_applicant/{{ toy.id }}" data-tn-link="" style="font-size: 18px;color: black;padding:20px 0px 0px 0px;"> {{ toy.applicants }} View all </a></p>
+
+                    {% endif %}
+				</div>
+				<div class="col-sm-6">
+					<br/>
+					<br/>
+					<a  class="btn btn-warning text-white" href="edit_job/{{ toy.id }}">edit</a><br/><br/>
+					<a class="btn btn-danger text-white" href="delete_job/{{ toy.id }}">delete</a>
+				</div>
+
+                {% endfor %}
+			</div>
+			</div>
+		</div>
+		<div class="container">
+	<div class="row">
+		<div class="col-sm-4 p-2">
+		</div>
+			<div class="col-sm-4">
+
+			</div>
+				<div class="col-sm-4">
+				</div>
+				<div class="container-fluid mt-5" style="border-top: 5px solid red;">
+				<div>
+					<h3>Rate your recent company:</h3>
+
+					<p>View more from Indeed’s Top-Rated Workplace awards</p>
+				</div>
+				<div>
+					<h1>More Popular Companies</h1>
+				</div>
+</body>
+</html>
+					{% endblock %}

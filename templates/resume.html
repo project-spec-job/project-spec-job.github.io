@@ -1,0 +1,34 @@
+{% extends 'header.html' %}
+
+{% block content %}
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 p-5">
+					<center><img src="{{baseurl}}images/job1.png" height="100px" width="100px"></center>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 p-2 bg-light mx-auto text-center" >
+					<center><h3 style="font-size: 30px;">Create an job@ Resume</h3>
+					          <form method="post" enctype="multipart/form-data" action="resume">
+									{% csrf_token %}
+									<input type="file" name="myfile">
+									<button type="submit" class="btn btn-primary p-3 pl-4 pr-4 " style="border-radius: 30px;">Upload Your Resume </button>
+								  </form>
+
+								<br/><br/><br/>
+						<p style="font-size: 12px;">By continuing, you agree to create an account and public resume. You agree to our Terms Of Service, </p>
+					</center>
+				</div>
+			</div>
+		</div>
+		<center><p style="font-size: 12px;padding-top: 20px"><a href="login.html">Have an account? Sign in</a> <br/><br/>
+
+		©2020 <span class="text-info"> Cookies, Privacy and Terms </span></p></center>
+
+</body>
+</html>
+
+{% endblock %}
